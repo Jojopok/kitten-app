@@ -1,0 +1,9 @@
+<h3> Les chats à l'adoption</h3>
+
+<li *ngFor="let kitten of kittens">
+    <img [src]="kitten.imageUrl" alt="Image du chat">
+    <span>Nom : {{ kitten.name }}</span>
+    <span> Race : {{ kitten.breed }}</span>
+    <span>Date de naissance : {{ kitten.birthDate }}</span>
+    <button (click)="adoptKitten(kitten)">Adopter</button>
+</li>

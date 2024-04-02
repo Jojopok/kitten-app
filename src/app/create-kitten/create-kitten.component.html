@@ -1,0 +1,27 @@
+<h2> Ajouter un chat :</h2>
+<form [formGroup]="taskForm" (ngSubmit)="sendTaskToApp()">
+    <label for="name">Nom</label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="taskForm.get('name')?.invalid && taskForm.get('name')?.touched">
+        <div *ngIf="taskForm.get('name')?.errors?.['required']">Le nom est obligatoire</div>
+    </div>
+
+    <label for="breed">Race</label>
+    <input type="text" id="breed" formControlName="breed">
+    <div *ngIf="taskForm.get('breed')?.invalid && taskForm.get('breed')?.touched">
+        <div *ngIf="taskForm.get('breed')?.errors?.['required']"></div>
+    </div>
+
+    <label for="birthDate">Date de naissance</label>
+    <input type="date" id="birthDate" formControlName="birthDate">
+    <div *ngIf="taskForm.get('birthDate')?.invalid && taskForm.get('birthDate')?.touched">
+        <div *ngIf="taskForm.get('birthDate')?.errors?.['required']">La date de naissance est obligatoire</div>
+    </div>
+
+    <label for="imageUrl">URL de l'image</label>
+    <input type="text" id="imageUrl" formControlName="imageUrl">
+    <div *ngIf="taskForm.get('imageUrl')?.invalid && taskForm.get('imageUrl')?.touched">
+        <div *ngIf="taskForm.get('imageUrl')?.errors?.['required']">L'url de l'image est obligatoire</div>
+    </div>
+
+    <button type="submit">Ajouter</button>
