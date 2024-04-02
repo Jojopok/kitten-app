@@ -1,4 +1,6 @@
-<h1>Les chats !</h1>
-<app-create-kitten (newKitten)="addKittenToList($event)"></app-create-kitten>
-<app-list-kitten [kittens]="kittensList" (kittenAdopted)="onKittenAdopted($event)"></app-list-kitten>
-<app-user-kitten [userKittens]="userKittens"></app-user-kitten>
+<div class="center-content">
+    <h1>Les chats !</h1>
+    <app-create-kitten (newKitten)="addKittenToList($event)"></app-create-kitten>
+    <app-list-kitten [kittens]="kittensList" (kittenAdopted)="onKittenAdopted($event)"></app-list-kitten>
+    <app-user-kitten [userKittens]="userKittens"></app-user-kitten>
+  </div>

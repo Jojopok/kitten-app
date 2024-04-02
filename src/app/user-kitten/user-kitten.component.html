@@ -1,4 +1,9 @@
 <h4> Mes chats à moi ! </h4>
-<li *ngFor="let kitten of userKittens">
+<li class="kitten-item" *ngFor="let kitten of userKittens" (mouseover)="showInfo(kitten)" (mouseout)="hideInfo()">
     <img [src]="kitten.imageUrl" alt="Image du chat">
+    <div *ngIf="showInfoFlag && currentKitten === kitten" class="kitten-info">
+        <span>Nom : {{ currentKitten.name }}</span>
+        <span>Race : {{ currentKitten.breed }}</span>
+        <span>Date de naissance : {{ currentKitten.birthDate }}</span>
+    </div>
 </li>

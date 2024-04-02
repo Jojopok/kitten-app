@@ -13,4 +13,16 @@ export class UserKittenComponent {
 
   @Input() userKittens: Cat[] = [];
 
+  showInfo(kitten: Cat): void {
+    this.showInfoFlag = true;
+    this.currentKitten = kitten;
+  }
+
+  hideInfo(): void {
+    this.showInfoFlag = false;
+    this.currentKitten = null;
+  }
+showInfoFlag: boolean = false;
+  currentKitten: Cat | null = null;
+
 }
